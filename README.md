@@ -14,7 +14,7 @@ This release contains propbanks for the following languages:
 Using this data, we can create SRL systems that predict English PropBank labels for many different languages. See a recent demo screencast of this SRL for English, French and German [**here**](https://vimeo.com/161718580). 
 
 
-# Overview
+## Introduction
 
 This project aims to annotate text in different languages with a layer of "universal" semantic role labeling annotation. For this purpose, we use the frame and role labels of the English Proposition Bank to label shallow semantics in sentences in new target languages. 
 
@@ -38,11 +38,11 @@ For instance, consider the German sentence "Seine Arbeit wird von ehrenamtlichen
 The German verb 'unterstützt' is labeled as evoking the '**support.01**' frame with two roles: "Seine Arbeit" (_his work_) is labeled **A1** (project being supported) and "ehrenamtlichen Helfern und Regionalgruppen des Vereins" (_volunteers and regional groupings of the association_) is labeled **A0** (the helper). 
 
 
-## Format 
+### Format 
 
 The universal propbank (UP) for each language consists of three files in CoNLL-U format (one for training, dev and test data). In addition, each language has a folder with verb overview files in html format. These files can be viewed in a browser and give an overview of all English frames that each target language verb can evoke. 
 
-## Scope
+### Scope
 
 Our current focus is to annotate all target language verbs with appropriate English frames. This means that the scope of frame-evoking elements is currently limited to verbs. We also do not label target language auxiliary verbs. For each universal propbank, about 90% of all verbs are currently labeled. Unlabeled verbs often convey semantics for which we either could not find an appropriate English verb, or are part of complex verb constructions which we currently do not handle. 
 
