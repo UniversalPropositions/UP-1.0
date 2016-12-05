@@ -9,7 +9,7 @@ This release contains propbanks for the following languages:
 
 - [**German UP**](https://github.ibm.com/akbika/up-test/tree/master/UP_German) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [German Universal Treebank](https://github.com/UniversalDependencies/UD_German) 
 
-## Train SRL 
+## Multilingual SRL 
 
 Using this data, we can create SRL systems that predict English PropBank labels for many different languages. See a recent demo screencast of this SRL for English, French and German [**here**](https://vimeo.com/161718580). 
 
