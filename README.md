@@ -53,13 +53,11 @@ This is an ongoing project which we are improving along three lines: (1) We are 
 
 ## Publications
 
-Multilingual Information Extraction with PolyglotIE. Alan Akbik, Laura Chiticariu, Marina Danilevsky, Yonas Kbrom, Yunyao Li and Huaiyu Zhu. 26th International Conference on Computational Linguistics, COLING 2016 (to appear).
+Multilingual Information Extraction with PolyglotIE. Alan Akbik, Laura Chiticariu, Marina Danilevsky, Yonas Kbrom, Yunyao Li and Huaiyu Zhu. 26th International Conference on Computational Linguistics, COLING 2016.
 
 K-SRL: Instance-based Learning for Semantic Role Labeling. Alan Akbik and Yunyao Li. 26th International Conference on Computational Linguistics, COLING 2016.
 
 Multilingual Aliasing for Auto-Generating Proposition Banks. Alan Akbik, Xinyu Guan and Yunyao Li. 26th International Conference on Computational Linguistics, COLING 2016.
-
-Improving Data Quality by Leveraging Statistical Relational Learning. Larysa Visengeriyeva, Alan Akbik and Manohar Kaul. 21st International Conference on Information Quality, ICIQ 2016.
 
 Towards Semi-Automatic Generation of Proposition Banks for Low-Resource Languages. Alan Akbik, Vishwajeet Kumar and Yunyao Li. 2016 Conference on Empirical Methods on Natural Language Processing, EMNLP 2016.
 
