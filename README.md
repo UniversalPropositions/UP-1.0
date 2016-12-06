@@ -1,6 +1,6 @@
 # Universal Proposition Banks
 
-These is release 0.9 of the Universal Proposition Banks. It is built opon [release 1.4 of the Universal Dependency Treebanks](https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-1827) and inherits their [licence](https://lindat.mff.cuni.cz/repository/xmlui/page/licence-UD-1.4). We use the frame and role labels from the [English Proposition Bank](http://propbank.github.io/) version [3.0](https://github.com/propbank/propbank-documentation/blob/master/other-documentation/Description-of-PB3-changes.md).
+These is release 0.9 of the Universal Proposition Banks. It is built upon [release 1.4 of the Universal Dependency Treebanks](https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-1827) and inherits their [licence](https://lindat.mff.cuni.cz/repository/xmlui/page/licence-UD-1.4). We use the frame and role labels from the [English Proposition Bank](http://propbank.github.io/) version [3.0](https://github.com/propbank/propbank-documentation/blob/master/other-documentation/Description-of-PB3-changes.md).
 
 
 ## Languages
@@ -53,16 +53,18 @@ This is an ongoing project which we are improving along three lines: (1) We are 
 
 ## Publications
 
+Generating High Quality Proposition Banks for Multilingual Semantic Role Labeling. Alan Akbik, Laura Chiticariu, Marina Danilevsky, Yunyao Li, Shivakumar Vaithyanathan and Huaiyu Zhu. 53rd Annual Meeting of the Association for Computational Linguistics, ACL 2015.
+
+Polyglot: Multilingual Semantic Role Labeling with Unified Labels. Alan Akbik and Yunyao Li. 54th Annual Meeting of the Association for Computational Linguistics, ACL 2016.
+
+Towards Semi-Automatic Generation of Proposition Banks for Low-Resource Languages. Alan Akbik, Vishwajeet Kumar and Yunyao Li. 2016 Conference on Empirical Methods on Natural Language Processing, EMNLP 2016.
+
 Multilingual Information Extraction with PolyglotIE. Alan Akbik, Laura Chiticariu, Marina Danilevsky, Yonas Kbrom, Yunyao Li and Huaiyu Zhu. 26th International Conference on Computational Linguistics, COLING 2016.
 
 K-SRL: Instance-based Learning for Semantic Role Labeling. Alan Akbik and Yunyao Li. 26th International Conference on Computational Linguistics, COLING 2016.
 
 Multilingual Aliasing for Auto-Generating Proposition Banks. Alan Akbik, Xinyu Guan and Yunyao Li. 26th International Conference on Computational Linguistics, COLING 2016.
 
-Towards Semi-Automatic Generation of Proposition Banks for Low-Resource Languages. Alan Akbik, Vishwajeet Kumar and Yunyao Li. 2016 Conference on Empirical Methods on Natural Language Processing, EMNLP 2016.
 
-Polyglot: Multilingual Semantic Role Labeling with Unified Labels. Alan Akbik and Yunyao Li. 54th Annual Meeting of the Association for Computational Linguistics, ACL 2016.
-
-Generating High Quality Proposition Banks for Multilingual Semantic Role Labeling. Alan Akbik, Laura Chiticariu, Marina Danilevsky, Yunyao Li, Shivakumar Vaithyanathan and Huaiyu Zhu. 53rd Annual Meeting of the Association for Computational Linguistics, ACL 2015.
 
 
