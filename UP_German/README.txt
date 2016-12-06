@@ -21,3 +21,7 @@ semantic roles.
 Reflexive pronouns are specifically marked up the German UD. We use this
 markup to ensure that no reflexive pronouns take any semantic roles. 
 
+Known issues: 
+- A current problem is posed by German "Abtönungspartikel" like "doch", "ja", 
+"schon", "mal" etc. Our current practice is to label these as "AM-DIS" 
+whenever possible. We need to find good guidelines for their annotation.
