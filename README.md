@@ -55,15 +55,15 @@ This is an ongoing project which we are improving along three lines: (1) We are 
 
 [Generating High Quality Proposition Banks for Multilingual Semantic Role Labeling](http://alanakbik.github.io/papers/acl2015.pdf). Alan Akbik, Laura Chiticariu, Marina Danilevsky, Yunyao Li, Shivakumar Vaithyanathan and Huaiyu Zhu. *53rd Annual Meeting of the Association for Computational Linguistics* ACL 2015.
 
-Polyglot: Multilingual Semantic Role Labeling with Unified Labels. Alan Akbik and Yunyao Li. 54th Annual Meeting of the Association for Computational Linguistics, ACL 2016.
+[Polyglot: Multilingual Semantic Role Labeling with Unified Labels](http://alanakbik.github.io/papers/acl2016-demo.pdf). Alan Akbik and Yunyao Li. *54th Annual Meeting of the Association for Computational Linguistics* ACL 2016.
 
-Towards Semi-Automatic Generation of Proposition Banks for Low-Resource Languages. Alan Akbik, Vishwajeet Kumar and Yunyao Li. 2016 Conference on Empirical Methods on Natural Language Processing, EMNLP 2016.
+[Towards Semi-Automatic Generation of Proposition Banks for Low-Resource Languages](http://alanakbik.github.io/papers/EMNLP-final.pdf). Alan Akbik, Vishwajeet Kumar and Yunyao Li. *2016 Conference on Empirical Methods on Natural Language Processing* EMNLP 2016.
 
-Multilingual Information Extraction with PolyglotIE. Alan Akbik, Laura Chiticariu, Marina Danilevsky, Yonas Kbrom, Yunyao Li and Huaiyu Zhu. 26th International Conference on Computational Linguistics, COLING 2016.
+Multilingual Information Extraction with PolyglotIE. Alan Akbik, Laura Chiticariu, Marina Danilevsky, Yonas Kbrom, Yunyao Li and Huaiyu Zhu* 26th International Conference on Computational Linguistics* COLING 2016.
 
-K-SRL: Instance-based Learning for Semantic Role Labeling. Alan Akbik and Yunyao Li. 26th International Conference on Computational Linguistics, COLING 2016.
+[K-SRL: Instance-based Learning for Semantic Role Labeling](http://alanakbik.github.io/papers/K_SRL.pdf). Alan Akbik and Yunyao Li. *26th International Conference on Computational Linguistics* COLING 2016.
 
-Multilingual Aliasing for Auto-Generating Proposition Banks. Alan Akbik, Xinyu Guan and Yunyao Li. 26th International Conference on Computational Linguistics, COLING 2016.
+[Multilingual Aliasing for Auto-Generating Proposition Banks](http://alanakbik.github.io/papers/COLING_2016_aliasing.pdf). Alan Akbik, Xinyu Guan and Yunyao Li. *26th International Conference on Computational Linguistics* COLING 2016.
 
 
 
