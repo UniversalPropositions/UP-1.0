@@ -18,6 +18,6 @@ special treatment for verbs with separable prefixes, which we now include
 as part of the lemma. We also do not allow separable prefixes to take 
 semantic roles. 
 
-In addition, reflexive pronouns are specifically marked up the German UD. We
-use this markup to ensure that no reflexive pronouns take any semantic roles. 
+Reflexive pronouns are specifically marked up the German UD. We use this
+markup to ensure that no reflexive pronouns take any semantic roles. 
 
