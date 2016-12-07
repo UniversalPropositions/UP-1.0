@@ -1,3 +1,5 @@
+## French Universal Propositions
+
 The French UP is built on top of the universal dependency treebank for French, 
 version 1.4: https://github.com/UniversalDependencies/UD_French
 It inherites their licence and file structure. 
@@ -12,7 +14,7 @@ In addition, there are a list of verb overview files, one for each French verb.
 They indicate what frames a French verb can take and give examples. They are 
 meant to be viewed in a browser. 
 
-Known issues: 
-- Negations: French negations are split into two parts ("ne.. pas"). We need 
-good guidelines to annotate them.  
+## Known issues
+- Reflexive pronouns: Are not specifically marked up in the French UD. This is 
+problematic since we want to exclude all reflexive pronouns from taking roles.
 
