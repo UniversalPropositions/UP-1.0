@@ -14,6 +14,9 @@ In addition, there are a list of verb overview files, one for each German verb.
 They indicate what frames a German verb can take and give examples. They are 
 meant to be viewed in a browser. 
 
+**New**: You can also directly browse the superset of 
+[**German verbs**](http://alanakbik.github.io/UniversalPropositions_German/index.html). 
+
 ## Changes to German UD
 
 We made some changes to the underlying treebank with regards to verb lemmas. 
