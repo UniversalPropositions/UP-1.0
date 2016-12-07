@@ -15,7 +15,7 @@ They indicate what frames a French verb can take and give examples. They are
 meant to be viewed in a browser. 
 
 **New**: You can also directly browse the superset of 
-[**French verbs**](http://alanakbik.github.io/UniversalPropositions_French/index.html). 
+[**French verbs**](http://alanakbik.github.io/UniversalPropositions_French/). 
 
 ## Known issues
 - Reflexive pronouns: Are not specifically marked up in the French UD. This is 
