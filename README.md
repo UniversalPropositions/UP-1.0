@@ -7,6 +7,8 @@ These is release 0.9 of the Universal Proposition Banks. It is built upon [relea
 
 This release contains propbanks for the following languages: 
 
+- [**Chinese UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_French) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [Chinese Universal Treebank](https://github.com/UniversalDependencies/UD_Chinese) 
+
 - [**French UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_French) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [French Universal Treebank](https://github.com/UniversalDependencies/UD_French) 
 
 - [**German UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_German) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [German Universal Treebank](https://github.com/UniversalDependencies/UD_German) 
