@@ -10,6 +10,14 @@
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A2</b>: <i>second thing, locked to what</i><br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A3</b>: <i>instrument, string, lock</i><br>
 <h4>Example: </h4>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Ballmer machte 2001 ihre Matur an dem Gymnasium B&#228;umlihof und <b>schloss</b> in dem Mai 2008 ihr Studium der Geographie an der Universit&#228;t Basel mit dem Lizentiat ab .</font> <font size=1> (id: # sent_id train-s6836/de) </font><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Ballmer  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: schloss<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: in dem Mai 2008  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: ihr Studium der Geographie  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-LOC</b>: an der Universit&#228;t Basel  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A2</b>: mit dem Lizentiat  <br></div>
+<h4>Example: </h4>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Nach seinem Studium an dem Gettysburg College , welches er 1958 mit einem Bachelor in Mathematik und Physik <b>abschloss</b> , begann er als Kameraassistent f&#252;r Werbespots zu arbeiten .</font> <font size=1> (id: # sent_id train-s4370/de) </font><br><br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: welches  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: er  <br>
@@ -17,11 +25,11 @@
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A2</b>: mit einem Bachelor in Mathematik und Physik  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: abschloss<br></div>
 <h4>Example: </h4>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Bis zu sechs Millionen Bundesb&#252;rger haben daneben als Kassenpatienten eine Zusatzpolice <b>abgeschlossen</b> .</font> <font size=1> (id: # sent_id dev-s794/de) </font><br><br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Bis zu sechs Millionen Bundesb&#252;rger  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-LVB</b>: daneben  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A2</b>: als Kassenpatienten  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: eine Zusatzpolice  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Die Moskitos hatten die Saison als Tabellenf&#252;hrer vor dem Mannheimer ERC <b>abgeschlossen</b> und gingen somit als Favorit in das Turnier .</font> <font size=1> (id: # sent_id train-s6032/de) </font><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Die Moskitos  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: die Saison  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A2</b>: als Tabellenf&#252;hrer  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: vor dem Mannheimer ERC  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: abgeschlossen<br></div>
 <h4>Example: </h4>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Ihr Studium der Geschichte an der University of Florida <b>schloss</b> sie 1967 mit dem akademischen Grad Master of Arts ab .</font> <font size=1> (id: # sent_id train-s3700/de) </font><br><br>
@@ -30,9 +38,32 @@
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: sie  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: 1967  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A2</b>: mit dem akademischen Grad Master of Arts  <br></div>
+
+<div id="conclude.02"><center><h2>Predicate: <font color=red><i>abschlie&#223;en</i></font></h2></center>
+
+<h4>Roleset id: <font color=green>abschlie&#223;en.02</font>, conclude, bring to an end <font color=purple>Source: </font> <a href="http://verbs.colorado.edu/propbank/framesets-english-aliases/conclude.html">conclude.02</a> <font size=2><i>(conclude.02)</i></font> </h4><font size=2 color=blue><b>abschlie&#223;en.02</b>: etw. abschlie&#223;en; beenden</font><br>
+
+<h4>Roles:</h4>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: <i>Intentional agent</i><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: <i>Thing ending</i><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A2</b>: <i>Explicit instrument, thing ended with</i><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Am</b>: <i>point at which something ends</i><br>
 <h4>Example: </h4>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Aerospace -- Gruppe des Triebwerkherstellers Rolls -- Royce hat mit dem amerikanischen EDV -- Dienstleister Electronic Data Systems ( EDS ) einen Zehnjahresvertrag <b>abgeschlossen</b> .</font> <font size=1> (id: # sent_id test-s328/de) </font><br><br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Aerospace -- Gruppe des Triebwerkherstellers Rolls -- Royce  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A2</b>: mit dem amerikanischen EDV -- Dienstleister Electronic Data Systems ( EDS )  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: einen Zehnjahresvertrag  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Bis zu sechs Millionen Bundesb&#252;rger haben daneben als Kassenpatienten eine Zusatzpolice <b>abgeschlossen</b> .</font> <font size=1> (id: # sent_id dev-s794/de) </font><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Bis zu sechs Millionen Bundesb&#252;rger  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: daneben  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A2</b>: als Kassenpatienten  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: eine Zusatzpolice  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: abgeschlossen<br></div>
+<h4>Example: </h4>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Die Saison 1997 / 98 , in der seine Washington Capitals erstmals &#252;berhaupt das Finale um den Stanley Cup erreichten , <b>schloss</b> er als bester Gesamt - Torsch&#252;tze ( Regul&#228;re Saison und Playoffs ) ab .</font> <font size=1> (id: # sent_id train-s2716/de) </font><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: Die Saison 1997 / 98 , in der seine Washington Capitals erstmals &#252;berhaupt das Finale um den Stanley Cup erreichten ,  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: schloss<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: er  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A2</b>: als bester Gesamt - Torsch&#252;tze ( Regul&#228;re Saison und Playoffs )  <br></div>
+<h4>Example: </h4>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Das Team habe an dem Samstag ihre Aufgabe , die Zerst&#246;rung dieser Anlagen zu &#252;berwachen , <b>abgeschlossen</b> .</font> <font size=1> (id: # sent_id train-s2082/de) </font><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Das Team  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: an dem Samstag  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: ihre Aufgabe die Zerst&#246;rung dieser Anlagen zu &#252;berwachen  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: abgeschlossen<br></div>

@@ -8,31 +8,29 @@
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: <i>thing attending</i><br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: <i>thing attended</i><br>
 <h4>Example: </h4>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>In den 1960er und 1970er Jahren <b>besuchte</b> Jack Miles mehrere jesuitische Seminare an der Xavier University of Cincinnati , der P&#228;pstlichen Universit&#228;t Gregoriana und der Hebr&#228;ischen Universit&#228;t Jerusalem , bevor er 1971 in Nah&#246;stlichen Sprachen und Literatur an der Harvard University promovierte .</font> <font size=1> (id: # sent_id train-s2496/de) </font><br><br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: In den 1960er und 1970er Jahren  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besuchte<br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Jack Miles  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: mehrere jesuitische Seminare an der Xavier University of Cincinnati , der P&#228;pstlichen Universit&#228;t Gregoriana und der Hebr&#228;ischen Universit&#228;t Jerusalem  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: promovierte<br></div>
-<h4>Example: </h4>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Von 1906 bis 1908 <b>besuchte</b> er ein Lehrerseminar in Reichenberg .</font> <font size=1> (id: # sent_id train-s3023/de) </font><br><br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: Von 1906  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: bis 1908  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besuchte<br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: er  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: ein Lehrerseminar in Reichenberg  <br></div>
-<h4>Example: </h4>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>In dieser Zeit <b>besuchte</b> er das Georgetown College in Washington und das St. Joseph 's College in Bardstown , Kentucky .</font> <font size=1> (id: # sent_id train-s2344/de) </font><br><br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: In dieser Zeit  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besuchte<br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: er  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: das Georgetown College in Washington und das St. Joseph 's College in Bardstown , Kentucky  <br></div>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: das Georgetown College und das St. Joseph 's College in Bardstown , Kentucky  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-LOC</b>: in Washington  <br></div>
+<h4>Example: </h4>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Er <b>besuchte</b> das Gymnasium der Jesuiten in Klatovy und studierte danach Philosophie und Recht in Prag .</font> <font size=1> (id: # sent_id train-s2256/de) </font><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Er  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besuchte<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: das Gymnasium der Jesuiten  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-LOC</b>: in Klatovy  <br></div>
 <h4>Example: </h4>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Buddha <b>besucht</b> keine Kasernen .</font> <font size=1> (id: # sent_id train-s1980/de) </font><br><br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Buddha  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besucht<br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-NEG</b>: keine  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: Kasernen  <br></div>
+<h4>Example: </h4>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Auch ich kann jedem abraten diese Praxis zu <b>besuchen</b> !</font> <font size=1> (id: # sent_id train-s1053/de) </font><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: ich  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: diese Praxis  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besuchen<br></div>
 
 <div id="visit.01"><center><h2>Predicate: <font color=red><i>besuchen</i></font></h2></center>
 
@@ -42,29 +40,34 @@
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: <i>visitor</i><br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: <i>visited</i><br>
 <h4>Example: </h4>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Nebenbei <b>besuchte</b> Zeiller in Wien zielstrebig die Kunstakademie , nur um den begehrten Titel eines kaiserlichen Hofmalers zu erlangen .</font> <font size=1> (id: # sent_id train-s5708/de) </font><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: Nebenbei  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besuchte<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Zeiller  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-LOC</b>: in Wien  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: zielstrebig  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: die Kunstakademie  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: erlangen<br></div>
+<h4>Example: </h4>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Er pflegte zudem fast jeden Tag dreizehn arme oder kranke R&#246;mer in seinen Palast einzuladen , die er dann dort selbst bediente , und <b>besuchte</b> oft die Kranken in dem Ospedale di Santo Spirito .</font> <font size=1> (id: # sent_id train-s6215/de) </font><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Er  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-DIS</b>: zudem  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besuchte<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: oft  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: die Kranken  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: in dem Ospedale di Santo Spirito  <br></div>
+<h4>Example: </h4>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Als Tony Perry , der zu dieser Zeit an der Westk&#252;ste der Vereinigten Staaten lebte , in dem Sommer seinen Bruder Adrian an der Ostk&#252;ste <b>besuchte</b> , verbrachten die beiden ihre Zeit zun&#228;chst damit , Techno - St&#252;cke und Rap - Songs zu produzieren , die sie f&#252;r ihre Freunde aufnahmen .</font> <font size=1> (id: # sent_id train-s5258/de) </font><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Tony Perry , ,  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: lebte<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: in dem Sommer  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: seinen Bruder Adrian  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-LOC</b>: an der Ostk&#252;ste  <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besuchte<br></div>
+<h4>Example: </h4>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Touristen <b>besuchen</b> meist den mehrere Meter hohen Schulamit - Wasserfall in dem Nachal David .</font> <font size=1> (id: # sent_id train-s4057/de) </font><br><br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Touristen  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besuchen<br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: meist  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: den mehrere Meter hohen Schulamit - Wasserfall  <br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-LOC</b>: in dem Nachal David  <br></div>
-<h4>Example: </h4>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Als Tony Perry , der zu dieser Zeit an der Westk&#252;ste der Vereinigten Staaten lebte , in dem Sommer seinen Bruder Adrian an der Ostk&#252;ste <b>besuchte</b> , verbrachten die beiden ihre Zeit zun&#228;chst damit , Techno - St&#252;cke und Rap - Songs zu produzieren , die sie f&#252;r ihre Freunde aufnahmen .</font> <font size=1> (id: # sent_id train-s5258/de) </font><br><br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: Tony Perry , der zu dieser Zeit an der Westk&#252;ste der Vereinigten Staaten lebte ,  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: in dem Sommer  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: seinen Bruder Adrian  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-LOC</b>: an der Ostk&#252;ste  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besuchte<br></div>
-<h4>Example: </h4>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Als &#228;ltestes Kind , von insgesamt sieben der Familie Seminack , <b>besuchte</b> er in seiner Geburtsstadt die katholische Grundschule St. Martin of Tours Catholic Elementary School , die von den Josephschwestern geleitet wird .</font> <font size=1> (id: # sent_id train-s3601/de) </font><br><br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besuchte<br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: er  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: in seiner Geburtsstadt  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A1</b>: die katholische Grundschule St. Martin of Tours Catholic Elementary School , die von den Josephschwestern geleitet wird  <br></div>
-<h4>Example: </h4>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <font size=2>Selbst mitten in der Woche war das Lokal gut <b>besucht</b> .</font> <font size=1> (id: # sent_id dev-s476/de) </font><br><br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: Selbst  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-TMP</b>: mitten in der Woche  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>A0</b>: das Lokal  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>AM-MNR</b>: gut  <br>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Rel</b>: besucht<br></div>
