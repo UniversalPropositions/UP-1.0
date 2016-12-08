@@ -20,6 +20,7 @@ meant to be viewed in a browser.
 ## Known issues
 
 The Chinese UP is currently believed to be of lower quality than the other UPs.
+There are a number of reasons for this:
 
 - Traditional vs. Simplified Chinese: Our original model is trained on simplified 
 chinese, but this treebank is in traditional. For this reason, we have populated the 
