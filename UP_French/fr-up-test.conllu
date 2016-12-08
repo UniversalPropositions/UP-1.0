@@ -1,18 +1,18 @@
 # sentence-text: Je sens qu'entre ça et les films de médecins et scientifiques fous que nous avons déjà vus, nous pourrions emprunter un autre chemin pour l'origine.
-1	Je	il	PRON	PRON	Number=Sing|Person=1|PronType=Prs	2	nsubj	_	_	A1	_	_
-2	sens	sentir	VERB	VERB	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	Y	smell.02	_	_	_
+1	Je	il	PRON	PRON	Number=Sing|Person=1|PronType=Prs	2	nsubj	_	_	A0	_	_
+2	sens	sentir	VERB	VERB	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	Y	feel.01	_	_	_
 3	qu'	que	SCONJ	SCONJ	_	22	mark	_	_	_	_	_
 4	entre	entre	ADP	ADP	_	5	case	_	_	_	_	_
 5	ça	ça	PRON	PRON	Gender=Masc|Number=Sing|Person=3|PronType=Dem	22	nmod	_	_	_	_	_
 6	et	et	CONJ	CONJ	_	5	cc	_	_	_	_	_
 7	les	le	DET	DET	Definite=Def|Gender=Masc|Number=Plur|PronType=Art	8	det	_	_	_	_	_
-8	films	film	NOUN	NOUN	Gender=Masc|Number=Plur	5	conj	_	_	_	_	_
+8	films	film	NOUN	NOUN	Gender=Masc|Number=Plur	5	conj	_	_	_	A1	_
 9	de	de	ADP	ADP	_	10	case	_	_	_	_	_
 10	médecins	médecin	NOUN	NOUN	Gender=Masc|Number=Plur	8	nmod	_	_	_	_	_
 11	et	et	CONJ	CONJ	_	10	cc	_	_	_	_	_
 12	scientifiques	scientifique	NOUN	NOUN	Gender=Masc|Number=Plur	10	conj	_	_	_	_	_
 13	fous	fou	ADJ	ADJ	Gender=Masc|Number=Plur	12	amod	_	_	_	_	_
-14	que	que	PRON	PRON	PronType=Rel	18	dobj	_	_	_	A1	_
+14	que	que	PRON	PRON	PronType=Rel	18	dobj	_	_	_	R-A1	_
 15	nous	nous	PRON	PRON	Number=Plur|Person=1|PronType=Prs	18	nsubj	_	_	_	A0	_
 16	avons	avoir	AUX	AUX	Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	18	aux	_	_	_	_	_
 17	déjà	déjà	ADV	ADV	_	18	advmod	_	_	_	AM-TMP	_
@@ -20,7 +20,7 @@
 19	,	,	PUNCT	PUNCT	_	2	punct	_	_	_	_	_
 20	nous	nous	PRON	PRON	Number=Plur|Person=1|PronType=Prs	22	nsubj	_	_	_	_	A0
 21	pourrions	pouvoir	AUX	AUX	Mood=Cnd|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	22	aux	_	_	_	_	_
-22	emprunter	emprunter	VERB	VERB	VerbForm=Inf	2	ccomp	Y	borrow.01	_	_	_
+22	emprunter	emprunter	VERB	VERB	VerbForm=Inf	2	ccomp	Y	borrow.01	A1	_	_
 23	un	un	DET	DET	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	25	det	_	_	_	_	_
 24	autre	autre	ADJ	ADJ	Gender=Masc|Number=Sing	25	amod	_	_	_	_	_
 25	chemin	chemin	NOUN	NOUN	Gender=Masc|Number=Sing	22	dobj	_	_	_	_	A1
@@ -37,11 +37,11 @@
 5	à	à	ADP	ADP	_	8	case	_	_	_
 6	propos	propos	NOUN	NOUN	Gender=Masc|Number=Sing	5	mwe	_	_	_
 7	d'	de	ADP	ADP	_	5	mwe	_	_	_
-8	Averroès	Averroès	PROPN	PROPN	_	4	nmod	_	_	_
+8	Averroès	Averroès	PROPN	PROPN	_	4	nmod	_	_	A1
 9	de	de	ADP	ADP	_	11	case	_	_	_
 10	"	"	PUNCT	PUNCT	_	11	punct	_	_	_
 11	décentrement	décentrement	NOUN	NOUN	Gender=Masc|Number=Sing	8	nmod	_	_	_
-12-13	du	_	_	_	_	_	_	_	_	_
+12-13	du	_	_	_	_	_	_	_	_	_	_
 12	de	de	ADP	ADP	_	14	case	_	_	_
 13	le	le	DET	DET	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	14	det	_	_	_
 14	Sujet	sujet	NOUN	NOUN	Gender=Masc|Number=Sing	11	nmod	_	_	_
