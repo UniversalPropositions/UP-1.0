@@ -14,8 +14,6 @@ In addition, there are a list of verb overview files, one for each Spanish verb.
 They indicate what frames a German verb can take and give examples. They are 
 meant to be viewed in a browser. 
 
---**New**: You can also directly browse the superset of 
---[**Spanish verbs**](http://alanakbik.github.io/UniversalPropositions_Spanish/index.html). 
 
 ## Changes to Spanish UD
 
