@@ -13,6 +13,7 @@ This release contains propbanks for the following languages:
 
 - [**German UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_German) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [German Universal Treebank](https://github.com/UniversalDependencies/UD_German) 
 
+- [**Spanish UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_Spanish) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [Spanish Universal Treebank](https://github.com/UniversalDependencies/UD_Spanish) 
 
 ## Multilingual SRL 
 
