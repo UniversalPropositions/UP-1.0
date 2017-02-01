@@ -9,9 +9,13 @@ This release contains propbanks for the following languages:
 
 - [**Chinese UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_Chinese) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [Chinese Universal Treebank](https://github.com/UniversalDependencies/UD_Chinese) 
 
+- [**Finnish UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_Finnish) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [Finnish Universal Treebank](https://github.com/UniversalDependencies/UD_Finnish) 
+
 - [**French UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_French) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [French Universal Treebank](https://github.com/UniversalDependencies/UD_French) 
 
 - [**German UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_German) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [German Universal Treebank](https://github.com/UniversalDependencies/UD_German) 
+
+- [**Portuguese UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_Portuguese-Bosque) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [Portuguese Universal Treebank](https://github.com/UniversalDependencies/UD_Portuguese-Bosque) 
 
 - [**Spanish UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_Spanish) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [Spanish Universal Treebank](https://github.com/UniversalDependencies/UD_Spanish) 
 
