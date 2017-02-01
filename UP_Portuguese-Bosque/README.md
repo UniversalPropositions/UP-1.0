@@ -1,7 +1,7 @@
 ## Portuguese Universal Propositions
 
 The Portuguese UP is built on top of the universal dependency treebank for Portuguese, 
-version 1.4: https://github.com/UniversalDependencies/UD_Portuguese 
+version 1.4: https://github.com/UniversalDependencies/UD_Portuguese-Bosque 
 It inherites their licence and file structure. 
 
 There are three files in CoNLL-U format: A train, a test and a dev split of 
