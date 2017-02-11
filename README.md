@@ -2,6 +2,8 @@
 
 These is release 1.0 of the Universal Proposition Banks. It is built upon [release 1.4 of the Universal Dependency Treebanks](https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-1827) and inherits their [licence](https://lindat.mff.cuni.cz/repository/xmlui/page/licence-UD-1.4). We use the frame and role labels from the [English Proposition Bank](http://propbank.github.io/) version [3.0](https://github.com/propbank/propbank-documentation/blob/master/other-documentation/Description-of-PB3-changes.md).
 
+**News (02/10/2017)**: Initial version of Italian UP released!
+
 **News (01/31/2017)**: Initial versions of Finnish, Portuguese and Spanish UP released!
 
 
@@ -16,6 +18,8 @@ This release contains propbanks for the following languages:
 - [**French UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_French) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [French Universal Treebank](https://github.com/UniversalDependencies/UD_French) 
 
 - [**German UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_German) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [German Universal Treebank](https://github.com/UniversalDependencies/UD_German) 
+
+- [**Italian UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_Italian) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [Italian Universal Treebank](https://github.com/UniversalDependencies/UD_Italian) 
 
 - [**Portuguese UP**](https://github.com/System-T/UniversalPropositions/tree/master/UP_Portuguese-Bosque) - Inherits license [CC BY-NC-SA 3.0 US](http://creativecommons.org/licenses/by-nc-sa/3.0/us/) from the [Portuguese Universal Treebank](https://github.com/UniversalDependencies/UD_Portuguese-Bosque) 
 
