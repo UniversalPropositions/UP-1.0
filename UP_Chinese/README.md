@@ -11,7 +11,7 @@ These are added as additional columns to the CoNLL format, as in earlier
 practice  with the CoNLL-X format. 
 
 In addition, there are a list of verb overview files, one for each Chinese verb. 
-They indicate what frames a French verb can take and give examples. They are 
+They indicate what frames a Chinese verb can take and give examples. They are 
 meant to be viewed in a browser. 
 
 **New**: You can also directly browse the superset of 
