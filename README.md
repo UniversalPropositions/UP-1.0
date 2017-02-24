@@ -102,6 +102,6 @@ Please email your questions or comments to [Yunyao Li](http://researcher.watson.
 
 ### Contributors
 
-* Tomer Mahlin, IBm Systems Division, Israel
+* Tomer Mahlin, IBM Systems Division, Israel
 * [Alexandre Rademaker](http://researcher.ibm.com/researcher/view.php?person=br-alexrad), IBM Research - Brazil
 
