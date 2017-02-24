@@ -85,6 +85,23 @@ This is an ongoing project which we are improving along three lines: (1) We are 
 
 [Multilingual Aliasing for Auto-Generating Proposition Banks](http://alanakbik.github.io/papers/COLING_2016_aliasing.pdf). Alan Akbik, Xinyu Guan and Yunyao Li. *26th International Conference on Computational Linguistics* COLING 2016.
 
+## People
 
+### Contact
 
+Please email your questions or comments to [Yunyao Li](http://researcher.watson.ibm.com/researcher/view.php?person=us-yunyaoli) and [Laura Chiticariu](http://researcher.watson.ibm.com/researcher/view.php?person=us-chiti)
+
+### Core Team
+
+* [Alan Akbik](http://alanakbik.github.io/), Zalando, Germany
+* [Laura Chiticariu](http://researcher.watson.ibm.com/researcher/view.php?person=us-chiti), IBM Research - Almaden
+* [Marina Danilevsky](http://researcher.watson.ibm.com/researcher/view.php?person=us-mdanile), IBM Research - Almaden
+* [Yunyao Li](http://researcher.watson.ibm.com/researcher/view.php?person=us-yunyaoli), IBM Research - Almaden
+* [Chenguang (Ray) Wang](), IBM Research - Almaden
+* [Huaiyu Zhu](http://researcher.watson.ibm.com/researcher/view.php?person=us-huaiyu), IBM Research - Almaden
+
+### Contributors
+
+* Tomer Mahlin, IBm Systems Division, Israel
+* [Alexandre Rademaker](http://researcher.ibm.com/researcher/view.php?person=br-alexrad), IBM Research - Brazil
 
