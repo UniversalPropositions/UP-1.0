@@ -97,7 +97,7 @@ Please email your questions or comments to [Yunyao Li](http://researcher.watson.
 * [Laura Chiticariu](http://researcher.watson.ibm.com/researcher/view.php?person=us-chiti), IBM Research - Almaden
 * [Marina Danilevsky](http://researcher.watson.ibm.com/researcher/view.php?person=us-mdanile), IBM Research - Almaden
 * [Yunyao Li](http://researcher.watson.ibm.com/researcher/view.php?person=us-yunyaoli), IBM Research - Almaden
-* [Chenguang (Ray) Wang](), IBM Research - Almaden
+* [Chenguang (Ray) Wang](http://researcher.watson.ibm.com/researcher/view.php?person=ibm-Chenguang.Wang), IBM Research - Almaden
 * [Huaiyu Zhu](http://researcher.watson.ibm.com/researcher/view.php?person=us-huaiyu), IBM Research - Almaden
 
 ### Contributors
