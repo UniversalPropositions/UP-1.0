@@ -105,5 +105,7 @@ Please email your questions or comments to [Yunyao Li](http://researcher.watson.
 * Xinyu Guan, Yale University
 * Tomer Mahlin, IBM Systems Division, Israel
 * [Alexandre Rademaker](http://researcher.ibm.com/researcher/view.php?person=br-alexrad), IBM Research - Brazil
+* Vishwajeet Kumar, IIT Bombay
 * [Fei Xia](http://faculty.washington.edu/fxia), University of Washington
+
 
