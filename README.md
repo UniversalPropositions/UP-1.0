@@ -94,15 +94,14 @@ This is an ongoing project which we are improving along three lines: (1) We are 
 
 ### Contact
 
-Please email your questions or comments to [Yunyao Li](http://researcher.watson.ibm.com/researcher/view.php?person=us-yunyaoli) and [Chenguang (Ray) Wang](http://researcher.ibm.com/researcher/view.php?person=ibm-Chenguang.Wang)
+Please email your questions or comments to [Yunyao Li](http://researcher.watson.ibm.com/researcher/view.php?person=us-yunyaoli) and [Huaiyu Zhu](http://researcher.watson.ibm.com/researcher/view.php?person=us-huaiyu).
 
 ### Core Team
 
 * [Alan Akbik](http://alanakbik.github.io/), Zalando, Germany
-* [Laura Chiticariu](http://researcher.watson.ibm.com/researcher/view.php?person=us-chiti), IBM Research - Almaden
+* [Laura Chiticariu](http://researcher.watson.ibm.com/researcher/view.php?person=us-chiti), IBM Watson
 * [Marina Danilevsky](http://researcher.watson.ibm.com/researcher/view.php?person=us-mdanile), IBM Research - Almaden
 * [Yunyao Li](http://researcher.watson.ibm.com/researcher/view.php?person=us-yunyaoli), IBM Research - Almaden
-* [Chenguang (Ray) Wang](http://researcher.watson.ibm.com/researcher/view.php?person=ibm-Chenguang.Wang), IBM Research - Almaden
 * [Huaiyu Zhu](http://researcher.watson.ibm.com/researcher/view.php?person=us-huaiyu), IBM Research - Almaden
 
 ### Contributors
@@ -112,5 +111,5 @@ Please email your questions or comments to [Yunyao Li](http://researcher.watson.
 * [Alexandre Rademaker](http://researcher.ibm.com/researcher/view.php?person=br-alexrad), IBM Research - Brazil
 * Vishwajeet Kumar, IIT Bombay
 * [Fei Xia](http://faculty.washington.edu/fxia), University of Washington
-
+* Chenguang (Ray) Wang, Amazon
 
