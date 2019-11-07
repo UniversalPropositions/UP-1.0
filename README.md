@@ -6,6 +6,7 @@ These is release 1.0 of the Universal Proposition Banks. It is built upon [relea
 
 **News (01/31/2017)**: Initial versions of Finnish, Portuguese and Spanish UP released!
 
+**News (10/01/2019)**: Two domain-specific Propbank released ([Contract](https://developer.ibm.com/exchanges/data/all/contracts-proposition-bank/), [Finance](https://developer.ibm.com/exchanges/data/all/finance-proposition-bank/))! 
 
 ## Languages
 
