@@ -37,7 +37,8 @@ UD collection) with the data in this directory (called UP collection).
    to CoNLL-U valid files.
 
 3. Execute the `main` function in the merge.lisp (you will need SBCL
-   and the cl-conllu library that can be installed with quicklisp).
+   and the cl-conllu library, version 0.6 or above, that can be
+   installed with quicklisp).
 
 4. The files `*.new` are the new files produced from the UD files with
    the extra SRL annotations from the UP files.
@@ -68,11 +69,11 @@ pt_bosque-up-test.conllu # sent_id = CP999-2 # text =
 sentence level mismatches:
 
 ```
-% grep propbank *.new | sort | uniq -c
-   6 pt_bosque-up-test.conllu.new:# propbank = diff-number-tokens
- 107 pt_bosque-up-train.conllu.new:# propbank = diff-number-tokens
-   6 pt_bosque-up-train.conllu.new:# propbank = no-up
-   3 pt_bosque-up-train.conllu.new:# propbank = not-in-ud
+% grep propbank *.conllu | sort | uniq -c
+   6 pt_bosque-up-test.conllu:# propbank = diff-number-tokens
+ 107 pt_bosque-up-train.conllu:# propbank = diff-number-tokens
+   5 pt_bosque-up-train.conllu:# propbank = no-up
+   2 pt_bosque-up-train.conllu:# propbank = not-in-ud
 ```
 
 Token level mismatches (the binary masc encodes if the upostag, head
