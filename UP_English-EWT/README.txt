@@ -1,6 +1,15 @@
 
 http://pragmaticemacs.com/emacs/aligning-text/
-https://ufal.mff.cuni.cz/conll2009-st/eval-data.html 
+https://ufal.mff.cuni.cz/conll2009-st/eval-data.html
+
+
+1. run the AWK script to produce the en-ewt.conllu file.
+2. run the merge.lisp to produce the ud+prop.conllu (revise, kept the dev,train,test sets)
+3. project spans to head-words
+
+
+Statistics:
+
 
 total number of sentences:
 
