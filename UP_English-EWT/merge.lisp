@@ -1,14 +1,59 @@
+;; Copyright 2020 IBM
+
+;; Licensed under the Apache License, Version 2.0 (the "License");
+;; you may not use this file except in compliance with the License.
+;; You may obtain a copy of the License at
+
+;;     http://www.apache.org/licenses/LICENSE-2.0
+
+;; Unless required by applicable law or agreed to in writing, software
+;; distributed under the License is distributed on an "AS IS" BASIS,
+;; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+;; See the License for the specific language governing permissions and
+;; limitations under the License.
 
 (ql:quickload '(:str :cl-conllu :cl-ppcre))
 
-(in-package :cl-conllu)
+(defpackage :merge-pb
+  (:use :cl :cl-conllu :cl-ppcre))
 
+(in-package :merge-pb)
+
+;; utilities
 
 (defun clean-misc (tk)
   (setf (token-misc tk)
 	(format nil "~{~a~^|~}" (remove-if (lambda (e) (equal e "_"))
-					   (split-sequence #\|  (token-misc tk))))))
+					   (str:split #\| (token-misc tk))))))
 
+(defun extract-token-misc (s field)
+  (mapcar (lambda (tk)
+	    (cadr (assoc field (mapcar (lambda (p) (str:split #\= p))
+				       (str:split #\| (token-misc tk)))
+			 :test #'equal)))
+	  (sentence-tokens s)))
+
+(defun token-misc-alist (tk)
+  (mapcar (lambda (p)
+	    (destructuring-bind (a b)
+		(str:split #\= p)
+	      (cons a b)))
+	  (str:split #\| (token-misc tk))))
+
+(defun alist-update (alist key value &optional (test #'equal))
+  "Update the value of a key or add a cell."
+  (let ((cell (assoc key alist :test test)))
+    (if cell
+        (progn (setf (cdr cell) value) alist)
+        (acons key value alist))))
+
+(defun update-token-misc (tk alist)
+  (setf (token-misc tk)
+	(format nil "~{~a~^|~}"
+		(mapcar (lambda (e) (format nil "~a=~a" (car e) (cdr e)))
+			alist))))
+
+;; main code
 
 (defun ud-id (s)
   (let ((doc (sentence-meta-value s "doc_id"))
@@ -67,19 +112,10 @@
 	      (push (car p) res)))))))
 
 
-
-(defun extract-token-misc (s field)
-  (mapcar (lambda (tk)
-	    (cadr (assoc field (mapcar (lambda (p) (str:split #\= p))
-				       (str:split #\| (token-misc tk)))
-			 :test #'equal)))
-	  (sentence-tokens s)))
-
-
 (defun parse-args (alist)
   (labels ((tk-type (s)
-	     (let ((cpat "^\\(([^()]+)\\)$")
-		   (ipat "^\\(([^()]+)$"))
+	     (let ((cpat "^\\(([^()]+)\\*\\)$")
+		   (ipat "^\\(([^()]+)\\*$"))
 	       (cond
 		 ((equal s "*")  (cons :star nil))
 		 ((equal "*)" s) (cons :end nil))
@@ -98,7 +134,7 @@
 	     (if (null alist)
 		 (reverse res)
 		 (let ((tk (car alist)))
-		   (case (car (tk-type tk))
+		   (ecase (car (tk-type tk))
 		     (:star
 		      (aux (cdr alist) (1+ pos) curr res))
 		     (:end
@@ -114,7 +150,6 @@
   (let ((all-tokens (sentence-tokens s)))
     (labels ((get-token-head (tk)
 	       (nth (1- (token-head tk)) all-tokens))
-
 	     (aux (tks heads)
 	       (cond
 		 ((null tks)
@@ -127,59 +162,67 @@
 		  (aux (cons (get-token-head (car tks)) (cdr tks)) heads))
 
 		 (t (aux (cdr tks) (cons (car tks) heads))))))
-      (aux (subseq (sentence-tokens s) ini-p (1+ end-p)) nil)))))
+      (aux (subseq (sentence-tokens s) ini-p (1+ end-p)) nil))))
 
 
 (defun srl-sentence (s)
-  (let ((preds  (remove-if (lambda (p) (equal "-" (cdr p)))
-			   (mapcar #'cons
-				   (sentence-tokens s)
-				   (extract-token-misc s "Roleset"))))
-	(res))
+  (let* ((preds  (remove-if (lambda (p) (equal "-" (cdr p)))
+			    (mapcar #'cons
+				    (sentence-tokens s)
+				    (extract-token-misc s "Roleset"))))
+	 (args   (make-array (list 2 (length (sentence-tokens s)) (length preds))
+			     :initial-element nil)))
     (when preds
-      (let ((args-m (make-array (list (length (sentence-tokens s)) (length preds))
-				:element-type 'string
-				:initial-contents
-				(mapcar (lambda (v) (str:split #\/ v))
-					(extract-token-misc s "Args"))))) 
-	(destructuring-bind (n m)
-	    (array-dimensions args-m)
-	  (dotimes (c m res)
-	    (push (list (car (nth c preds))
-			(cdr (nth c preds))
-			(mapcar (lambda (a) (list (car a) (span-head s (cadr a) (caddr a))))
-				(parse-args (loop for i from 0 below n collect (aref args-m i c)))))
-		 res)))))))
+      (destructuring-bind (i rt ct)
+	  (array-dimensions args)
+	(declare (ignore i))
+	(let ((vls (extract-token-misc s "Args")))
+	  (assert (equal (length vls) rt))
+	  (loop for rv in vls
+		for ri from 0 below rt
+		do (loop for cv in (str:split #\/ rv)
+			 for ci from 0 below ct
+			 do (assert (equal (length (str:split #\/ rv)) ct)
+				    (rt ct rv cv)
+				    "rt = ~s  ct = ~s rv = ~s cv = ~s" rt ct rv cv)
+			 do (setf (aref args 0 ri ci) cv))))
 
+	(dotimes (c ct)
+	  (mapc (lambda (a)
+		  (let* ((heads (span-head s (cadr a) (caddr a))))
+		    ;; (assert (equal (length heads) 1))
+		    (dolist (head heads)
+		      (setf (aref args 1 (1- (token-id head)) c)
+			    (car a)))))
+		(parse-args (loop for r from 0 below rt collect (aref args 0 r c)))))
 
-(defun test ()
-  (let ((up (cl-conllu:read-conllu "en-ewt.conllu"))
-	(ud (reduce (lambda (r fn)
-		      (let ((sents (cl-conllu:read-conllu fn)))
-			(append r sents)))
-		    (list #P"/Users/ar/work/ud-english-ewt/en_ewt-ud-dev.conllu"
-			  #P"/Users/ar/work/ud-english-ewt/en_ewt-ud-test.conllu"
-			  #P"/Users/ar/work/ud-english-ewt/en_ewt-ud-train.conllu")
-		    :initial-value nil)))
-    (merge-sentences ud up)))
+	(loop for tk in (sentence-tokens s)
+	      do (let ((al (token-misc-alist tk)))
+		   (alist-update al "Args"
+				 (format nil "~{~a~^/~}"
+					 (loop for c from 0 below ct collect (or (aref args 1 (1- (token-id tk)) c) "_"))))
+		   (setf al (remove "Tree" al :key #'car :test #'equal))
+		   (update-token-misc tk al)))))))
 
 
 (defun main ()
   (let* ((sets (make-hash-table :test #'equal))
-	 (up (cl-conllu:read-conllu "en-ewt.conllu"))
-	 (ud (reduce (lambda (r fn)
-		       (let ((sents (cl-conllu:read-conllu fn)))
-			 (setf (gethash fn sets)
-			       (mapcar #'sentence-id sents))
-			 (append r sents)))
-		     (list #P"/Users/ar/work/ud-english-ewt/en_ewt-ud-dev.conllu"
-			   #P"/Users/ar/work/ud-english-ewt/en_ewt-ud-test.conllu"
-			   #P"/Users/ar/work/ud-english-ewt/en_ewt-ud-train.conllu")
-		     :initial-value nil))
-	 (db (make-hash-table :test #'equal)))
+	 (up   (cl-conllu:read-conllu "en-ewt-propbank.conllu"))
+	 (ud   (reduce (lambda (r fn)
+			 (let ((sents (cl-conllu:read-conllu fn)))
+			   (setf (gethash fn sets)
+				 (mapcar #'sentence-id sents))
+			   (append r sents)))
+		       (list #P"/Users/ar/work/ud-english-ewt/en_ewt-ud-dev.conllu"
+			     #P"/Users/ar/work/ud-english-ewt/en_ewt-ud-test.conllu"
+			     #P"/Users/ar/work/ud-english-ewt/en_ewt-ud-train.conllu")
+		       :initial-value nil))
+	 (db   (make-hash-table :test #'equal)))
     (mapc (lambda (s)
 	    (setf (gethash (sentence-id s) db) s))
-	  (merge-sentences ud up))
+	  (mapc (lambda (s)
+		  (if (sentence-meta-value s "propbank") s (srl-sentence s)))
+		(merge-sentences ud up)))
     (maphash (lambda (k v)
 	       (write-conllu (loop for id in v collect (gethash id db :error))
 			     (make-pathname :name (cl-ppcre:regex-replace "ud" (pathname-name k) "up")
@@ -187,11 +230,10 @@
 	     sets)))
 
 
-
 (defun format-token (tk)
   (let ((args (cadr (assoc "Args"  
-			   (mapcar (lambda (e) (split-sequence #\= e))
-				   (split-sequence #\| (token-misc tk)))
+			   (mapcar (lambda (e) (str:split #\= e))
+				   (str:split #\| (token-misc tk)))
 			   :test #'equal))))
     (format nil "~a ~a ~a  ~a" 
 	    (token-form tk)
@@ -200,6 +242,6 @@
 	    (cl-ppcre:regex-replace "(\\*/?)+$" args ""))))
 
 
-(mapcar (lambda (s) (conllu.draw:tree-sentence s :fields-or-function #'format-token))
-	(subseq (read-conllu "/Users/ar/work/propbank-release/ud+prop.conllu") 0 10))
+;; (mapcar (lambda (s) (conllu.draw:tree-sentence s :fields-or-function #'format-token))
+;; 	(subseq (read-conllu "/Users/ar/work/propbank-release/ud+prop.conllu") 0 10))
 
