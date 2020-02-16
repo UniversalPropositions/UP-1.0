@@ -7,11 +7,6 @@ sources:
 2. https://github.com/propbank/propbank-release
 3. https://catalog.ldc.upenn.edu/LDC2012T13
 
-To reexecute the code you will need the following tools:
-
-- Common Lisp implementation. Tested in http://sbcl.org
-- The GNU Awk and Bash
-
 The main idea is to project the rolesets and its arguments (2) on top
 of the constituent analysis in the original treebank (3) to the
 dependency trees from the UD analysis (1). 
@@ -87,7 +82,14 @@ origial constituent.
 
 ** How to execute the code
 
-The code should work only in MacOS or Linux.
+The code should work only in MacOS or Linux. To reexecute the code you
+will need the following tools:
+
+- Common Lisp implementation. Tested in http://sbcl.org
+- The GNU Awk and Bash
+
+When these files will need to be regenerate? Whenever a new release of
+any dataset (1-3) above is made public.
 
 The dataset (3) was used to complete the stand-off files from the
 Propbank dataset. We followed the proceduce described in the README of
