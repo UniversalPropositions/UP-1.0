@@ -35,7 +35,9 @@ $0 ~ /^#/ {print; next}
 
 $0 ~ /^[0-9]/ && NF == 10 {
     pmisc = $10;
-
+    delete a;
+    delete b;
+    
     str2map(pmisc,"|","=",a)
     frame = a["Framefile"]
     delete a["Framefile"]
@@ -47,11 +49,12 @@ $0 ~ /^[0-9]/ && NF == 10 {
     args=a["Args"]
     delete a["Args"]
     split(args,b,/\//)
-
+    margs = join1(b,"\t")
+    
     misc  = join2(a,"|","=")
     if (misc == "") misc = "_"
-    margs = join1(b,"\t")
-    print $1,$2,$3,$4,$5,$6,$7,$8,$9,misc,frame,role,margs
+
+    print $1,$2,$3,$4,$5,$6,$7,$8,$9,misc,role,margs
     next
 }
 

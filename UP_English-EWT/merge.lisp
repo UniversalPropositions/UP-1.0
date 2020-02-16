@@ -21,23 +21,12 @@
 
 ;; utilities
 
-(defun clean-misc (tk)
-  (setf (token-misc tk)
-	(format nil "~{~a~^|~}" (remove-if (lambda (e) (equal e "_"))
-					   (str:split #\| (token-misc tk))))))
-
-(defun extract-token-misc (s field)
-  (mapcar (lambda (tk)
-	    (cadr (assoc field (mapcar (lambda (p) (str:split #\= p))
-				       (str:split #\| (token-misc tk)))
-			 :test #'equal)))
-	  (sentence-tokens s)))
-
 (defun token-misc-alist (tk)
   (mapcar (lambda (p)
-	    (destructuring-bind (a b)
-		(str:split #\= p)
-	      (cons a b)))
+	    (let ((pair (str:split #\= p)))
+	      (ecase (length pair)
+		(2 (cons (car pair) (cadr pair)))
+		(1 (cons (car pair) nil)))))
 	  (str:split #\| (token-misc tk))))
 
 (defun alist-update (alist key value &optional (test #'equal))
@@ -50,8 +39,25 @@
 (defun update-token-misc (tk alist)
   (setf (token-misc tk)
 	(format nil "~{~a~^|~}"
-		(mapcar (lambda (e) (format nil "~a=~a" (car e) (cdr e)))
+		(mapcar (lambda (e)
+			  (if (cdr e)
+			      (format nil "~a=~a" (car e) (cdr e))
+			      (format nil "~a" (car e))))
 			alist))))
+
+(defun clean-misc (tk &optional (fields nil))
+  (let ((alist (remove '("_") (token-misc-alist tk) :test #'equal)))
+    (loop for fld in fields
+	  do (setq alist (remove fld alist :test #'equal :key #'car)))
+    (update-token-misc tk alist)))
+
+
+(defun extract-token-misc (s field)
+  (mapcar (lambda (tk)
+	    (cdr (assoc field (token-misc-alist tk) :test #'equal)))
+	  (sentence-tokens s)))
+
+
 
 ;; main code
 
@@ -102,10 +108,12 @@
 	    (progn
 	      (mapcar (lambda (a b)
 			(setf (token-misc a)
-			      (format nil "~a|Tree=~a|~a~a" (token-misc a) (token-deps b) (token-misc b)
-				      (if (equal (token-xpostag a) (token-upostag b))
-					  ""
-					  (format nil "|PBPOS=~a" (token-upostag b)))))
+			      (format nil "~{~a~^|~}"
+				      (list (token-misc a)
+					    (token-misc b)
+					    (if (equal (token-xpostag a) (token-upostag b))
+						"_"
+						(format nil "PTBPOS=~a" (token-upostag b))))))
 			(clean-misc a))
 		      (sentence-tokens (car p))
 		      (sentence-tokens (cdr p)))
@@ -166,12 +174,13 @@
 
 
 (defun srl-sentence (s)
-  (let* ((preds  (remove-if (lambda (p) (equal "-" (cdr p)))
+  (let* ((preds  (remove-if (lambda (p) (or (null (cdr p)) (equal "-" (cdr p))))
 			    (mapcar #'cons
 				    (sentence-tokens s)
 				    (extract-token-misc s "Roleset"))))
 	 (args   (make-array (list 2 (length (sentence-tokens s)) (length preds))
 			     :initial-element nil)))
+
     (when preds
       (destructuring-bind (i rt ct)
 	  (array-dimensions args)
@@ -197,17 +206,15 @@
 		(parse-args (loop for r from 0 below rt collect (aref args 0 r c)))))
 
 	(loop for tk in (sentence-tokens s)
-	      do (let ((al (token-misc-alist tk)))
-		   (alist-update al "Args"
-				 (format nil "~{~a~^/~}"
-					 (loop for c from 0 below ct collect (or (aref args 1 (1- (token-id tk)) c) "_"))))
-		   (setf al (remove "Tree" al :key #'car :test #'equal))
-		   (update-token-misc tk al)))))))
+	      do (let ((al (token-misc-alist tk))
+		       (vs (loop for c from 0 below ct collect (or (aref args 1 (1- (token-id tk)) c) "_"))))
+		   (update-token-misc tk
+				      (alist-update al "Args" (format nil "~{~a~^/~}" vs)))))))))
 
 
 (defun main ()
   (let* ((sets (make-hash-table :test #'equal))
-	 (up   (cl-conllu:read-conllu "en-ewt-propbank.conllu"))
+	 (up   (cl-conllu:read-conllu "propbank-all.conllu"))
 	 (ud   (reduce (lambda (r fn)
 			 (let ((sents (cl-conllu:read-conllu fn)))
 			   (setf (gethash fn sets)
@@ -230,6 +237,7 @@
 	     sets)))
 
 
+;; for use with conllu.draw:tree-sentence function
 (defun format-token (tk)
   (let ((args (cadr (assoc "Args"  
 			   (mapcar (lambda (e) (str:split #\= e))
@@ -240,8 +248,4 @@
 	    (token-upostag tk)
 	    (token-deprel tk)
 	    (cl-ppcre:regex-replace "(\\*/?)+$" args ""))))
-
-
-;; (mapcar (lambda (s) (conllu.draw:tree-sentence s :fields-or-function #'format-token))
-;; 	(subseq (read-conllu "/Users/ar/work/propbank-release/ud+prop.conllu") 0 10))
 
