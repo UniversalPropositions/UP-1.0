@@ -269,3 +269,19 @@ of token 4 is 'VBG' but in the LDC (3) dataset the POS is 'NN'.
        ARG1
 18      .       .       PUNCT   .       _       2       punct   2:punct _       _       _       _       _
 #+END_EXAMPLE
+
+3. Missing sentences or mismatch in the number of tokens
+
+In the final data, few sentences were annotated with a =metadata=
+field. The =no-up= means the sentence was not in the propbank release
+(reported [[https://github.com/propbank/propbank-release/issues/7][here]]). The only case where the sentence has different number
+of tokens in the datasets (1,2/3) is marked with =diff-number-tokens=
+(reported [[https://github.com/propbank/propbank-release/issues/8][here]]).
+
+#+BEGIN_EXAMPLE
+% grep "# propbank" *.conllu | sort | uniq -c
+  28 en_ewt-up-dev.conllu:# propbank = no-up
+  15 en_ewt-up-test.conllu:# propbank = no-up
+   1 en_ewt-up-train.conllu:# propbank = diff-number-tokens
+#+END_EXAMPLE
+
