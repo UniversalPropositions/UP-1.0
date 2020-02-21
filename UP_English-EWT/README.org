@@ -1,0 +1,282 @@
+#+Title: The EN Universal Propbank
+
+The files on this directory were obtained from the merge of the
+sources:
+
+1. https://github.com/universaldependencies/UD_English-EWT
+2. https://github.com/propbank/propbank-release
+3. https://catalog.ldc.upenn.edu/LDC2012T13
+
+The main idea is to project the rolesets and its arguments (2) on top
+of the constituent analysis in the original treebank (3) to the
+dependency trees from the UD analysis (1). 
+
+Consider the sentence and its original annotations obtained from
+(2,3):
+
+#+BEGIN_EXAMPLE
+sent_id = weblog-blogspot.com_thelameduck_20041119192207_ENG_20041119_192207-0008
+text = With the demand so high, the question arises on to who should be or has the right to be the Santa of nuclear weapons.
+─┮  
+ │   ╭─╼With SCONJ mark			*	*		*	(ARGM-ADV 
+ │   │ ╭─╼the DET det			*	(ARG1 
+ │   ├─┶demand NOUN nsubj	        (V*)	*)		 
+ │   ├─╼so ADV advmod			*	(ARGM-EXT*)	 
+ │ ╭─┶high ADJ advcl			*	(V*)		*	*)	 
+ │ ├─╼, PUNCT punct   
+ │ │ ╭─╼the DET det			*	*		*	(ARG1 
+ │ ├─┶question NOUN nsubj		*	*		(V*)	*)	 
+ ╰─┾arises VERB root			*	*		*	(V*)	 
+   │ ╭─╼on ADP mark			*	*		(ARG1*	(C-ARG1 
+   │ ├─╼to SCONJ mark   
+   │ ├─╼who PRON nsubj			*	*		*	*	(ARG1*)	(ARG0*)	 
+   │ ├─╼should AUX aux			*	*		*	*	(ARGM-MOD*)	 
+   ├─┾be AUX obl			*	*		*	*	(V*)		 
+   │ │ ╭─╼or CCONJ cc   
+   │ ╰─┾has VERB conj			*	*		*	*	*		(V*)		 
+   │   │ ╭─╼the DET det			*	*		*	*	*		(ARG1 
+   │   ╰─┾right NOUN obj		*	*		*	*	*		*		(V*)	 
+   │     │ ╭─╼to PART mark		*	*		*	*	*		*		(ARG2 
+   │     │ ├─╼be AUX cop		*	*		*	*	*		*		*	(V*) 
+   │     │ ├─╼the DET det		*	*		*	*	(ARG2*		*		*	(ARG2 
+   │     ╰─┾Santa PROPN acl   
+   │       │ ╭─╼of ADP case   
+   │       │ ├─╼nuclear ADJ amod   
+   │       ╰─┶weapons NOUN nmod	        *	*		*)	*)	*)		*)		*)	*) 
+   ╰─╼. PUNCT punct   
+#+END_EXAMPLE
+
+The same sentence in the final `.conllu` files will be annotated as
+below. The arguments marks will be on the head of the subtree from the
+origial constituent.
+
+#+BEGIN_EXAMPLE
+─┮  
+ │   ╭─╼With SCONJ mark			_	_		_	_		_		_	_	_ 
+ │   │ ╭─╼the DET det			_	_		_	_		_		_	_	_ 
+ │   ├─┶demand NOUN nsubj		V	ARG1		_	_		_		_	_	_ 
+ │   ├─╼so ADV advmod			_	ARGM-EXT	_	_		_		_	_	_ 
+ │ ╭─┶high ADJ advcl			_	V		_	ARGM-ADV	_		_	_	_ 
+ │ ├─╼, PUNCT punct			_	_		_	_		_		_	_	_ 
+ │ │ ╭─╼the DET det			_	_		_	_		_		_	_	_ 
+ │ ├─┶question NOUN nsubj		_	_		V	ARG1		_		_	_	_ 
+ ╰─┾arises VERB root			_	_		_	V		_		_	_	_ 
+   │ ╭─╼on ADP mark			_	_		_	_		_		_	_	_ 
+   │ ├─╼to SCONJ mark			_	_		_	_		_		_	_	_ 
+   │ ├─╼who PRON nsubj			_	_		_	_		ARG1		ARG0	_	_ 
+   │ ├─╼should AUX aux			_	_		_	_		ARGM-MOD	_	_	_ 
+   ├─┾be AUX obl			_	_		ARG1	C-ARG1		V		_	_	_ 
+   │ │ ╭─╼or CCONJ cc			_	_		_	_		_		_	_	_ 
+   │ ╰─┾has VERB conj			_	_		_	_		_		V	_	_ 
+   │   │ ╭─╼the DET det			_	_		_	_		_		_	_	_ 
+   │   ╰─┾right NOUN obj		_	_		_	_		_		ARG1	V	_ 
+   │     │ ╭─╼to PART mark		_	_		_	_		_		_	_	_ 
+   │     │ ├─╼be AUX cop		_	_		_	_		_		_	_	V 
+   │     │ ├─╼the DET det		_	_		_	_		_		_	_	_ 
+   │     ╰─┾Santa PROPN acl		_	_		_	_		ARG2		_	ARG2	ARG2 
+   │       │ ╭─╼of ADP case		_	_		_	_		_		_	_	_ 
+   │       │ ├─╼nuclear ADJ amod	_	_		_	_		_		_	_	_ 
+   │       ╰─┶weapons NOUN nmod		_	_		_	_		_		_	_	_ 
+   ╰─╼. PUNCT punct			_	_		_	_		_		_	_	_ 
+#+END_EXAMPLE
+
+** How to execute the code
+
+The code should work only in MacOS or Linux. To reexecute the code you
+will need the following tools:
+
+- Common Lisp implementation. Tested in http://sbcl.org
+- The GNU Awk and Bash
+
+When these files will need to be regenerate? Whenever a new release of
+any dataset (1-3) above is made public.
+
+The dataset (3) was used to complete the stand-off files from the
+Propbank dataset. We followed the proceduce described in the README of
+the propbank release data to produce the =.gold_conll= files using the
+script =map_all_to_conll.py= provided in the propbank release.
+
+Consider that you have cloned the propbank repository (2) above to the
+directory =$PBHOME= and this directory is the =$UPENHOME=. Before
+execute the comands below, edit the =merge.lisp= file changing the
+location of the UD files in the function =main=. Finally execute:
+
+#+BEGIN_SRC bash
+cd $PBHOME
+find data/google -name "*.gold_conll" -exec awk -f $UPHOME/conll-to-conllu.awk {} \; > propbank-all.conllu
+mv propbank-all.conllu $UPHOME/
+cd $UPHOME
+sh make.sh
+#+END_SRC
+
+The output format is described in the README file of this
+repository. 
+
+** Statistics
+
+Top 20 predicates in the dataset:
+
+#+BEGIN_EXAMPLE
+% awk '$0 ~ /^[0-9]/ {if (NF > 10) print $11; else print "NP";}' en_ewt-up-*.conllu | sort | uniq -c | sort -nr | head -20
+204270 _
+6076 be.01
+2949 be.03
+1583 have.01
+1176 do.01
+1070 have.03
+ 544 say.01
+ 511 do.02
+ 510 know.01
+ 472 be.02
+ 417 go.02
+ 412 want.01
+ 375 see.01
+ 374 thank.01
+ 368 need.01
+ 346 think.01
+ 344 use.01
+ 338 get.01
+ 301 NP
+ 289 work.01
+#+END_EXAMPLE   
+
+Verbs not tagged as predicate:
+
+#+BEGIN_EXAMPLE
+% awk '$4 ~ /^V/ && $10 !~ /\(V\*/ {print}' propbank-all.conllu | wc -l
+    1133
+#+END_EXAMPLE
+
+Words tagged as predicates by POS tags (in the original PTB tags):
+
+#+BEGIN_EXAMPLE
+% awk '$10 ~ /\(V\*/  {print $4}' propbank-all.conllu | sort | uniq -c
+   1 CD
+   3 GW
+2679 JJ
+ 158 JJR
+  13 JJS
+6724 NN
+2041 NNS
+   1 RB
+11663 VB
+6398 VBD
+3648 VBG
+4300 VBN
+6853 VBP
+5777 VBZ
+#+END_EXAMPLE
+
+The same but in the output files:
+
+#+BEGIN_EXAMPLE
+% awk '$0 ~ /^[0-9]/ && $11 != "_" {print $4}' en_ewt*.conllu | sort | uniq -c | sort -nr | head -20
+27349 VERB
+11326 AUX
+8848 NOUN
+2912 ADJ
+  40 PUNCT
+  23 ADP
+  21 DET
+  19 ADV
+  18 PROPN
+  11 CCONJ
+   6 PRON
+   4 X
+   3 NUM
+   3 INTJ
+   2 PART
+   1 SCONJ
+#+END_EXAMPLE
+
+The following cases of discontinuous and reference arguments:
+
+#+BEGIN_EXAMPLE
+% awk '$0 ~ /C-V\*/ {print}' propbank-all.conllu | wc -l
+     187
+
+% awk '$0 ~ /C-ARG[0-9]\*/ {print}' propbank-all.conllu | wc -l
+     695
+
+% awk '$0 ~ /R-ARG[0-9]\*/ {print}' propbank-all.conllu | wc -l
+    1292
+#+END_EXAMPLE
+
+** Notes
+
+1. constituents splited into multiple subtree
+
+In some sentences, arguments in a constituent span over multiple
+subtrees. See the case of 's' and 'call' as ARG1 of the verb
+'let'. Currently, our solution is to duplicate the argument in the
+column as shown below. Note also the case of 'call off' (discontinuous
+verb).
+
+#+BEGIN_EXAMPLE
+sent_id = answers-20070723111604AAzUvhb_ans-0006
+text = Lets call the whole thing off.
+─┮  
+ ╰─┮Let VERB root		V	_ 
+   ├─╼s PRON obj		ARG1	ARG0 
+   ├─┮call VERB xcomp		ARG1	V 
+   │ │ ╭─╼the DET det		_	_ 
+   │ │ ├─╼whole ADJ amod	_	_ 
+   │ ├─┶thing NOUN obj		_	ARG1 
+   │ ╰─╼off ADP compound:prt	_	C-V 
+   ╰─╼. PUNCT punct		_	_ 
+#+END_EXAMPLE
+
+
+2. Difference between PTB POS tag and UD XPOSTAG
+
+The documentation of UD_English-EWT treebank says that XPOSTAG field
+preserved the original value of the dataset (3) with manual annotation
+and corrections. We found 194 tokens with different values maked in
+the MISC field with the key PTBPOS.
+
+#+BEGIN_EXAMPLE
+% grep PTBPOS en_ewt*.conllu | wc -l
+     194
+#+END_EXAMPLE
+
+The token below is one example of this case. In UD has XPOSTAG
+of token 4 is 'VBG' but in the LDC (3) dataset the POS is 'NN'.
+
+#+BEGIN_EXAMPLE
+# sent_id = weblog-blogspot.com_rigorousintuition_20060511134300_ENG_20060511_134300-0085
+# text = It is the marrying off of young girls to older men often close relatives that enfurates me.
+1       It      it      PRON    PRP     Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs  2       expl    2:expl  _       _       _       _       _
+2       is      be      VERB    VBZ     Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   0       root    0:root  _       be.01   V       _       _
+3       the     the     DET     DT      Definite=Def|PronType=Art       4       det     4:det   _       _       _       _       _
+4       marrying        marrying        NOUN    VBG     Number=Sing     2       nsubj   2:nsubj|16:nsubj        PTBPOS=NN       marry_off.02    ARG2    V       ARG0
+5       off     off     NOUN    NN      Number=Sing     4       advmod  4:advmod        _       _       _       _       _
+6       of      of      ADP     IN      _       8       case    8:case  _       _       _       _       _
+7       young   young   ADJ     JJ      Degree=Pos      8       amod    8:amod  _       _       _       _       _
+8       girls   girl    NOUN    NNS     Number=Plur     4       nmod    4:nmod:of       _       _       _       ARG1    _
+9       to      to      ADP     IN      _       11      case    11:case _       _       _       _       _
+10      older   older   ADJ     JJR     Degree=Cmp      11      amod    11:amod _       _       _       _       _
+11      men     man     NOUN    NNS     Number=Plur     4       nmod    4:nmod:to       _       _       _       ARG2    _
+12      often   often   ADV     RB      _       14      advmod  14:advmod       _       _       _       _       _
+13      close   close   ADJ     JJ      Degree=Pos      14      amod    14:amod _       _       _       _       _
+14      relatives       relative        NOUN    NNS     Number=Plur     11      appos   11:appos        _       _       _       _       _
+15      that    that    PRON    WDT     PronType=Rel    16      nsubj   4:ref   _       _       _       _       R-ARG0
+16      enfurates       enfurate        VERB    VBZ     Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   4       acl:relcl       4:acl:relcl     _       infuriate.01    ARG1    _       V
+17      me      I       PRON    PRP     Case=Acc|Number=Sing|Person=1|PronType=Prs      16      obj     16:obj  SpaceAfter=No   _       _       _       ARG1
+18      .       .       PUNCT   .       _       2       punct   2:punct _       _       _       _       _
+#+END_EXAMPLE
+
+3. Missing sentences or mismatch in the number of tokens
+
+In the final data, few sentences were annotated with a =metadata=
+field. The =no-up= means the sentence was not in the propbank release
+(reported [[https://github.com/propbank/propbank-release/issues/7][here]]). The only case where the sentence has different number
+of tokens in the datasets (1,2/3) is marked with =diff-number-tokens=
+(reported [[https://github.com/propbank/propbank-release/issues/8][here]]).
+
+#+BEGIN_EXAMPLE
+% grep "# propbank" *.conllu | sort | uniq -c
+  28 en_ewt-up-dev.conllu:# propbank = no-up
+  15 en_ewt-up-test.conllu:# propbank = no-up
+   1 en_ewt-up-train.conllu:# propbank = diff-number-tokens
+#+END_EXAMPLE
+
