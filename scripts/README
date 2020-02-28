@@ -1,0 +1,35 @@
+
+conlluf-conllus.awk
+
+  Transform the `false` conllu files to the `.conllus` files.
+
+long-short.awk
+
+  Transform the A[0-9M] to ARG[0-9M] arguments.
+
+short-long.awk
+
+  Inverse of the previous script.
+
+args.awk
+
+  Used for extracting all occurrences of predicate arguments. Useful
+  in conjunction with sort and uniq.
+
+  % awk -f ../scripts/args.awk *.conllus | sort | uniq -c
+18749 ARG0
+34238 ARG1
+   27 ARG1-DSP
+12170 ARG2
+  807 ARG3
+  509 ARG4
+    6 ARG5
+
+test-conllus.awk
+
+  In the `.conllus` files, the number of columns inside a sentence is
+  fixed. The script can be used to check it.
+
+  awk -f ../scripts/test-conllus.awk *.conllus | grep -v "#" | sort | uniq -c
+
+  It must produce no lines with different pair of numbers.

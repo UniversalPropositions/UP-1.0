@@ -181,6 +181,10 @@
 	 (args   (make-array (list 2 (length (sentence-tokens s)) (length preds))
 			     :initial-element nil)))
 
+
+    (push (cons "propbank-nprop" (length preds))
+	  (sentence-meta s))
+
     (when preds
       (destructuring-bind (i rt ct)
 	  (array-dimensions args)
@@ -189,12 +193,11 @@
 	  (assert (equal (length vls) rt))
 	  (loop for rv in vls
 		for ri from 0 below rt
-		do (loop for cv in (str:split #\/ rv)
-			 for ci from 0 below ct
-			 do (assert (equal (length (str:split #\/ rv)) ct)
-				    (rt ct rv cv)
-				    "rt = ~s  ct = ~s rv = ~s cv = ~s" rt ct rv cv)
-			 do (setf (aref args 0 ri ci) cv))))
+		do (let ((cargs (str:split #\/ rv)))
+		     (assert (equal (length cargs) ct))
+		     (loop for cv in cargs
+			   for ci from 0 below ct
+			   do (setf (aref args 0 ri ci) cv)))))
 
 	(dotimes (c ct)
 	  (mapc (lambda (a)

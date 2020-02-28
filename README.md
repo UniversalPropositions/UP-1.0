@@ -57,7 +57,7 @@ The German verb 'unterstützt' is labeled as evoking the '**support.01**' frame 
 
 ### Format 
 
-The universal propbank (UP) for each language consists of three files (training, dev and test data) with the extension `.conllu` but currently encoding an extension of the [CoNLL-U format](http://universaldependencies.org/format.html). The extension is based on the CoNLL format produced by the [Propbank conversion scripts](https://github.com/propbank/propbank-release/blob/master/docs/conll-conversion-notes.md), called `.gold_conll`. 
+The universal propbank (UP) for each language consists of three files (training, dev and test data) with the extension `.conllus` currently encoding an extension of the [CoNLL-U format](http://universaldependencies.org/format.html). The extension is based on the CoNLL format produced by the [Propbank conversion scripts](https://github.com/propbank/propbank-release/blob/master/docs/conll-conversion-notes.md), called `.gold_conll`. 
 
 Besides the original 10 columns from the CoNLL-U format, the roleset column (column 11) gives the actual sense used, and that sense provides roleset specific meanings for each of the numbered arguments. Every column after the eleventh is a predicate, in order that they appear in the sentence. Note that the Propbank `.gold_conll` files contain a "frame file" column (column 11) that lets you know which ".xml" [file](https://github.com/propbank/propbank-frames/) contains the actual semantic form for the predicate in question (which is not always the same as the predicate: one must reference "lighten.xml" for lighten_up.02), but since all predicate identifier is unique, we haven't preserved this column.
 

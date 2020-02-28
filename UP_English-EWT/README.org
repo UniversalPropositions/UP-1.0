@@ -112,96 +112,6 @@ sh make.sh
 The output format is described in the README file of this
 repository. 
 
-** Statistics
-
-Top 20 predicates in the dataset:
-
-#+BEGIN_EXAMPLE
-% awk '$0 ~ /^[0-9]/ {if (NF > 10) print $11; else print "NP";}' en_ewt-up-*.conllu | sort | uniq -c | sort -nr | head -20
-204270 _
-6076 be.01
-2949 be.03
-1583 have.01
-1176 do.01
-1070 have.03
- 544 say.01
- 511 do.02
- 510 know.01
- 472 be.02
- 417 go.02
- 412 want.01
- 375 see.01
- 374 thank.01
- 368 need.01
- 346 think.01
- 344 use.01
- 338 get.01
- 301 NP
- 289 work.01
-#+END_EXAMPLE   
-
-Verbs not tagged as predicate:
-
-#+BEGIN_EXAMPLE
-% awk '$4 ~ /^V/ && $10 !~ /\(V\*/ {print}' propbank-all.conllu | wc -l
-    1133
-#+END_EXAMPLE
-
-Words tagged as predicates by POS tags (in the original PTB tags):
-
-#+BEGIN_EXAMPLE
-% awk '$10 ~ /\(V\*/  {print $4}' propbank-all.conllu | sort | uniq -c
-   1 CD
-   3 GW
-2679 JJ
- 158 JJR
-  13 JJS
-6724 NN
-2041 NNS
-   1 RB
-11663 VB
-6398 VBD
-3648 VBG
-4300 VBN
-6853 VBP
-5777 VBZ
-#+END_EXAMPLE
-
-The same but in the output files:
-
-#+BEGIN_EXAMPLE
-% awk '$0 ~ /^[0-9]/ && $11 != "_" {print $4}' en_ewt*.conllu | sort | uniq -c | sort -nr | head -20
-27349 VERB
-11326 AUX
-8848 NOUN
-2912 ADJ
-  40 PUNCT
-  23 ADP
-  21 DET
-  19 ADV
-  18 PROPN
-  11 CCONJ
-   6 PRON
-   4 X
-   3 NUM
-   3 INTJ
-   2 PART
-   1 SCONJ
-#+END_EXAMPLE
-
-The following cases of discontinuous and reference arguments:
-
-#+BEGIN_EXAMPLE
-% awk '$0 ~ /C-V\*/ {print}' propbank-all.conllu | wc -l
-     187
-
-% awk '$0 ~ /C-ARG[0-9]\*/ {print}' propbank-all.conllu | wc -l
-     695
-
-% awk '$0 ~ /R-ARG[0-9]\*/ {print}' propbank-all.conllu | wc -l
-    1292
-#+END_EXAMPLE
-
 ** Notes
 
 1. constituents splited into multiple subtree
@@ -235,7 +145,7 @@ and corrections. We found 194 tokens with different values maked in
 the MISC field with the key PTBPOS.
 
 #+BEGIN_EXAMPLE
-% grep PTBPOS en_ewt*.conllu | wc -l
+% grep PTBPOS en_ewt*.conllus | wc -l
      194
 #+END_EXAMPLE
 
@@ -274,9 +184,9 @@ of tokens in the datasets (1,2/3) is marked with =diff-number-tokens=
 (reported [[https://github.com/propbank/propbank-release/issues/8][here]]).
 
 #+BEGIN_EXAMPLE
-% grep "# propbank" *.conllu | sort | uniq -c
-  28 en_ewt-up-dev.conllu:# propbank = no-up
-  15 en_ewt-up-test.conllu:# propbank = no-up
-   1 en_ewt-up-train.conllu:# propbank = diff-number-tokens
+% grep "# propbank" *.conllus | sort | uniq -c
+  28 en_ewt-up-dev.conllus:# propbank = no-up
+  15 en_ewt-up-test.conllus:# propbank = no-up
+   1 en_ewt-up-train.conllus:# propbank = diff-number-tokens
 #+END_EXAMPLE
 
