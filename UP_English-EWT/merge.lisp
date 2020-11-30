@@ -14,6 +14,8 @@
 
 (ql:quickload '(:str :cl-conllu :cl-ppcre))
 
+(declaim (optimize (debug 2)))
+
 (defpackage :merge-pb
   (:use :cl :cl-conllu :cl-ppcre))
 
@@ -35,6 +37,9 @@
     (if cell
         (progn (setf (cdr cell) value) alist)
         (acons key value alist))))
+
+(Defun alist-remove (alist key)
+  (remove key alist :key #'car :test #'equal))
 
 (defun update-token-misc (tk alist)
   (setf (token-misc tk)
@@ -205,16 +210,37 @@
 			    (car a)))))
 		(parse-args (loop for r from 0 below rt collect (aref args 0 r c)))))
 
+
 	(loop for tk in (sentence-tokens s)
-	      do (let ((al (token-misc-alist tk))
-		       (vs (loop for c from 0 below ct collect (or (aref args 1 (1- (token-id tk)) c) "_"))))
-		   (update-token-misc tk
-				      (alist-update al "Args" (format nil "~{~a~^/~}" vs)))))))))
+	      do (let* ((al (token-misc-alist tk))
+			(a1 (alist-remove al "Framefile"))
+			(a2 (alist-remove a1 "Args"))
+			(a3 (remove-if (lambda (p) (and (equal "Roleset" (car p)) (equal "-" (cdr p)))) a2)))
+		   (update-token-misc tk a3)))
+
+	(loop for p in preds
+	      for i from 0 below ct
+	      do (let* ((al (token-misc-alist (car p)))
+			(args (loop for r from 0 below rt
+				    when (and (aref args 1 r i)
+					      (not (equal "V" (aref args 1 r i))))
+				      collect (format nil "~a:~a" (aref args 1 r i) (1+ r))))
+			(a1 (if (> (length args) 0)
+				(alist-update al "Args" (format nil "~{~a~^/~}" args))
+				(alist-update al "Args" "_"))))
+		   (update-token-misc (car p) a1)))
+
+	;; (loop for tk in (sentence-tokens s)
+	;;       do (let ((al (token-misc-alist tk))
+	;; 	       (vs (loop for c from 0 below ct collect (or (aref args 1 (1- (token-id tk)) c) "_"))))
+	;; 	   (update-token-misc tk
+	;; 			      (alist-update al "Args" (format nil "~{~a~^/~}" vs)))))
+	))))
 
 
 (defun main ()
   (let* ((sets (make-hash-table :test #'equal))
-	 (up   (cl-conllu:read-conllu "propbank-all.conllu"))
+	 (up   (cl-conllu:read-conllu #P"propbank-all.conllu"))
 	 (ud   (reduce (lambda (r fn)
 			 (let ((sents (cl-conllu:read-conllu fn)))
 			   (setf (gethash fn sets)
