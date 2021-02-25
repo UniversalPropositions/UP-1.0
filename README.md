@@ -122,12 +122,12 @@ Please email your questions or comments to [Yunyao Li](http://researcher.watson.
 * [Marina Danilevsky](http://researcher.watson.ibm.com/researcher/view.php?person=us-mdanile), IBM Research - Almaden
 * [Yunyao Li](http://researcher.watson.ibm.com/researcher/view.php?person=us-yunyaoli), IBM Research - Almaden
 * [Huaiyu Zhu](http://researcher.watson.ibm.com/researcher/view.php?person=us-huaiyu), IBM Research - Almaden
+* [Alexandre Rademaker](http://researcher.ibm.com/researcher/view.php?person=br-alexrad), IBM Research - Brazil
 
 ### Contributors
 
 * Xinyu Guan, Yale University
 * Tomer Mahlin, IBM Systems Division, Israel
-* [Alexandre Rademaker](http://researcher.ibm.com/researcher/view.php?person=br-alexrad), IBM Research - Brazil
 * Vishwajeet Kumar, IIT Bombay
 * [Fei Xia](http://faculty.washington.edu/fxia), University of Washington
 * Chenguang (Ray) Wang, Amazon
