@@ -115,6 +115,7 @@ This is an ongoing project which we are improving along three lines: (1) We are 
 
 Please email your questions or comments to [Yunyao Li](http://researcher.watson.ibm.com/researcher/view.php?person=us-yunyaoli) and [Huaiyu Zhu](http://researcher.watson.ibm.com/researcher/view.php?person=us-huaiyu).
 
+
 ### Core Team
 
 * [Alan Akbik](http://alanakbik.github.io/), Zalando, Germany
@@ -123,12 +124,12 @@ Please email your questions or comments to [Yunyao Li](http://researcher.watson.
 * [Yunyao Li](http://researcher.watson.ibm.com/researcher/view.php?person=us-yunyaoli), IBM Research - Almaden
 * [Huaiyu Zhu](http://researcher.watson.ibm.com/researcher/view.php?person=us-huaiyu), IBM Research - Almaden
 * [Ishan Jindal](https://researcher.watson.ibm.com/researcher/view.php?person=ibm-Ishan.Jindal), IBM Research - Almaden
+* [Alexandre Rademaker](http://researcher.ibm.com/researcher/view.php?person=br-alexrad), IBM Research - Brazil
 
 ### Contributors
 
 * Xinyu Guan, Yale University
 * Tomer Mahlin, IBM Systems Division, Israel
-* [Alexandre Rademaker](http://researcher.ibm.com/researcher/view.php?person=br-alexrad), IBM Research - Brazil
 * Vishwajeet Kumar, IIT Bombay
 * [Fei Xia](http://faculty.washington.edu/fxia), University of Washington
 * Chenguang (Ray) Wang, Amazon
