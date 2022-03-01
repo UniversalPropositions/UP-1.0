@@ -118,7 +118,7 @@ Please email your questions or comments to [Yunyao Li](http://researcher.watson.
 
 ### Core Team
 
-* [Alan Akbik](http://alanakbik.github.io/), Zalando, Germany
+* [Alan Akbik](http://alanakbik.github.io/), Humboldt-Universität zu Berlin, Germany
 * [Laura Chiticariu](http://researcher.watson.ibm.com/researcher/view.php?person=us-chiti), IBM Watson
 * [Marina Danilevsky](http://researcher.watson.ibm.com/researcher/view.php?person=us-mdanile), IBM Research - Almaden
 * [Yunyao Li](http://researcher.watson.ibm.com/researcher/view.php?person=us-yunyaoli), IBM Research - Almaden
