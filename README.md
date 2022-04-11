@@ -13,8 +13,8 @@ We have made repository level re-organization, where following changes have been
 - No further changes will be made to this repository (freezing all the resources). 
   - All the language specific updates will be in the corresponding repositories `UP_<language>-<corpus>`.
 - To make this data available as it is, a RELEASE will be made named up1.0 data release. 
-
-==========================
+- For more information, follow new Universal PropBanks Website https://universalpropositions.github.io/
+=======================================================================================================
 
 # Universal Proposition Banks
 
