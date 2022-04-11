@@ -1,4 +1,4 @@
-# NOTE
+# NOTE [2022/04/15]
 
 We have made repository level re-organization, where following changes have been made:
 - Introducing language and corpus specific repository similar to [Universal Dependencies project](https://github.com/UniversalDependencies).  
@@ -10,8 +10,11 @@ We have made repository level re-organization, where following changes have been
   - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Italian --> https://github.com/UniversalPropositions/UP_Italian-ISDT
   - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Spanish-AnCora --> https://github.com/UniversalPropositions/UP_Spanish-AnCora
   - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Spanish --> https://github.com/UniversalPropositions/UP_Spanish-GSD
-- No changes will be made to this repository. All the language specific update will be in corresponding repository `UP_<language>-<corpus>`
+- No further changes will be made to this repository (freezing all the resources). 
+  - All the language specific updates will be in the corresponding repositories `UP_<language>-<corpus>`.
+- To make this data available as it is, a RELEASE will be made named up1.0 data release. 
 
+==========================
 
 # Universal Proposition Banks
 
