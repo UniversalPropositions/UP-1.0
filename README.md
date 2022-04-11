@@ -1,3 +1,18 @@
+# NOTE
+
+We have made repository level re-organization, where following changes have been made:
+- Introducing language and corpus specific repository similar to [Universal Dependencies project](https://github.com/UniversalDependencies).  
+- All the UP1.0 resources have been moved to language specific repositories. Following folders are moved to corresponding repositories.
+  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Chinese --> https://github.com/UniversalPropositions/UP_Chinese-GSD
+  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Finnish --> https://github.com/UniversalPropositions/UP_Finnish-TDT
+  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_French --> https://github.com/UniversalPropositions/UP_French-GSD
+  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_German -->  https://github.com/UniversalPropositions/UP_German-GSD
+  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Italian --> https://github.com/UniversalPropositions/UP_Italian-ISDT
+  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Spanish-AnCora --> https://github.com/UniversalPropositions/UP_Spanish-AnCora
+  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Spanish --> https://github.com/UniversalPropositions/UP_Spanish-GSD
+- No changes will be made to this repository. All the language specific update will be in corresponding repository `UP_<language>-<corpus>`
+
+
 # Universal Proposition Banks
 
 These is release 1.0 of the Universal Proposition Banks. It is built upon [release 1.4 of the Universal Dependency Treebanks](https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-1827) and inherits their [licence](https://lindat.mff.cuni.cz/repository/xmlui/page/licence-UD-1.4). We use the frame and role labels from the [English Proposition Bank](http://propbank.github.io/) version [3.0](https://github.com/propbank/propbank-documentation/blob/master/other-documentation/Description-of-PB3-changes.md).
