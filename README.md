@@ -1,22 +1,3 @@
-# NOTE [2022/04/15]
-We are freezig the resources in this repository. To be in consistent with UP2.0 repository format, we reorganize this repo and copy the data from each langauge specific folder to langauge specific repository. Following are the changes:
-- Introducing language and corpus specific repository similar to [Universal Dependencies project](https://github.com/UniversalDependencies).  
-- All the UP1.0 resources have been moved to language specific repositories. Following folders are copied to corresponding repositories.
-  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Chinese --> https://github.com/UniversalPropositions/UP_Chinese-GSD
-  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Finnish --> https://github.com/UniversalPropositions/UP_Finnish-TDT
-  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_French --> https://github.com/UniversalPropositions/UP_French-GSD
-  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_German -->  https://github.com/UniversalPropositions/UP_German-GSD
-  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Italian --> https://github.com/UniversalPropositions/UP_Italian-ISDT
-  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Spanish-AnCora --> https://github.com/UniversalPropositions/UP_Spanish-AnCora
-  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Spanish --> https://github.com/UniversalPropositions/UP_Spanish-GSD
-  - https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Portuguese-Bosque --> https://github.com/UniversalPropositions/UP_Portuguese-Bosque
-- No further changes will be made to this repository (freezing all the resources). 
-  - All the language specific updates will be in the corresponding repositories `UP_<language>-<corpus>`.
-- To make this data available as it is, a RELEASE will be made named v1.0 data release. 
-- For more information, follow Universal PropBanks Website https://universalpropositions.github.io/
-=======================================================================================================
-
-
 # Universal Proposition Banks
 
 These is release 1.0 of the Universal Proposition Banks. It is built upon [release 1.4 of the Universal Dependency Treebanks](https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-1827) and inherits their [licence](https://lindat.mff.cuni.cz/repository/xmlui/page/licence-UD-1.4). We use the frame and role labels from the [English Proposition Bank](http://propbank.github.io/) version [3.0](https://github.com/propbank/propbank-documentation/blob/master/other-documentation/Description-of-PB3-changes.md).
@@ -26,6 +7,32 @@ These is release 1.0 of the Universal Proposition Banks. It is built upon [relea
 **News (02/10/2017)**: Initial version of Italian UP released!
 
 **News (01/31/2017)**: Initial versions of Finnish, Portuguese and Spanish UP released!
+
+**News (04/15/2022)**: We are freezig the resources in this repository. 
+
+To be in consistent with UP2.0 repository format, we reorganize this
+repo and copy the data from each langauge specific folder to langauge
+specific repository. Following are the changes:
+
+Introducing language and corpus specific repository similar to
+  [Universal Dependencies
+  project](https://github.com/UniversalDependencies).
+
+All the UP1.0 resources have been moved to language specific
+repositories. Following folders are copied to corresponding
+repositories.
+
+- https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Chinese --> https://github.com/UniversalPropositions/UP_Chinese-GSD
+- https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Finnish --> https://github.com/UniversalPropositions/UP_Finnish-TDT
+- https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_French --> https://github.com/UniversalPropositions/UP_French-GSD
+- https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_German -->  https://github.com/UniversalPropositions/UP_German-GSD
+- https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Italian --> https://github.com/UniversalPropositions/UP_Italian-ISDT
+- https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Spanish-AnCora --> https://github.com/UniversalPropositions/UP_Spanish-AnCora
+- https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Spanish --> https://github.com/UniversalPropositions/UP_Spanish-GSD
+- https://github.com/UniversalPropositions/UP-1.0/tree/master/UP_Portuguese-Bosque --> https://github.com/UniversalPropositions/UP_Portuguese-Bosque
+
+No further changes will be made to this repository (freezing all the resources). All the language specific updates will be in the corresponding repositories `UP_<language>-<corpus>`. To make this data available as it is, a RELEASE will be made named v1.0 data release. For more information, follow Universal PropBanks Website https://universalpropositions.github.io/
+
 
 ## Languages
 
@@ -49,8 +56,7 @@ This release contains propbanks for the following languages:
 
 Using this data, we can create SRL systems that predict English PropBank labels for many different languages. See a recent demo screencast of this SRL for English, French and German [**here**](https://vimeo.com/161718580). 
 
-
-## Introduction
+### Introduction
 
 This project aims to annotate text in different languages with a layer of "universal" semantic role labeling annotation. For this purpose, we use the frame and role labels of the English Proposition Bank to label shallow semantics in sentences in new target languages. 
 
@@ -97,15 +103,7 @@ This is an ongoing research project in which we use a combination of data-driven
 This is an ongoing project which we are improving along three lines: (1) We are working on adding new languages to the current release. (2) We are working to curate the data to improve the quality of SRL annotation. (3) We are looking into extending the scope of frame-evoking-elements to other types of predicates besides verbs. (4) We will migrate the data to newer UD standard. 
 
 
-## Publications
-
-<!-- [Learning Explainable Linguistic Expressions with Neural Inductive Logic Programming for Sentence Classification](https://www.aclweb.org/anthology/2020.emnlp-main.345/). Prithviraj Sen, Marina Danilevsky, Yunyao Li, Siddhartha Brahma, Matthias Boehm, Laura Chiticariu and Rajasekar Krishnamurthy. *2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)* EMNLP 2020.
-
-[A Novel Workflow for Accurately and Efficiently Crowdsourcing Predicate Senses and Argument Labels](https://www.aclweb.org/anthology/2020.findings-emnlp.38/). Youxuan Jiang, Huaiyu Zhu, Jonathan K. Kummerfeld, Yunyao Li and Walter Lasecki. *2020 Conference on Empirical Methods in Natural Language Processing: Findings (EMNLP)* EMNLP: Findings 2020.
-
-[CLAR: A Cross-Lingual Argument Regularizer for Semantic Role Labeling](https://www.aclweb.org/anthology/2020.findings-emnlp.279/). Ishan Jindal, Yunyao Li, Siddhartha Brahma and Huaiyu Zhu. *2020 Conference on Empirical Methods in Natural Language Processing: Findings (EMNLP)* EMNLP: Findings 2020.
-
-[Learning Explainable Linguistic Expressions with Neural Inductive Logic Programming for Sentence Classification](https://www.aclweb.org/anthology/P19-3023/). Prithviraj Sen, Yunyao Li, Eser Kandogan, Yiwei Yang and Walter Lasecki. *2019 57th Annual Meeting of the Association for Computational Linguistics: System Demonstrations* ACL:System Demonstration 2019. -->
+### Publications
 
 [Crowd-in-the-Loop: A Hybrid Approach for Annotating Semantic Roles](https://www.aclweb.org/anthology/D17-1205). Chenguang Wang, Alan Akbik, Laura Chiticariu, Yunyao Li, Fei Xia and Anbang Xu. *2017 Conference on Empirical Methods on Natural Language Processing* EMNLP 2017.
 
@@ -123,17 +121,11 @@ This is an ongoing project which we are improving along three lines: (1) We are 
 
 [Generating High Quality Proposition Banks for Multilingual Semantic Role Labeling](http://alanakbik.github.io/papers/acl2015.pdf). Alan Akbik, Laura Chiticariu, Marina Danilevsky, Yunyao Li, Shivakumar Vaithyanathan and Huaiyu Zhu. *53rd Annual Meeting of the Association for Computational Linguistics* ACL 2015.
 
-<!-- ## Preprint
-[Improved Semantic Role Labeling using Parameterized Neighborhood Memory Adaptation](https://arxiv.org/pdf/2011.14459.pdf). Ishan Jindal, Ranit Aharonov, Siddhartha Brahma, Huaiyu Zhu and Yunyao Li. *arXiv preprint arXiv:2011.14459*
- -->
-
-
 ## People
 
 ### Contact
 
 Please email your questions or comments to [Huaiyu Zhu](http://researcher.watson.ibm.com/researcher/view.php?person=us-huaiyu).
-
 
 ### Core Team
 
@@ -142,7 +134,6 @@ Please email your questions or comments to [Huaiyu Zhu](http://researcher.watson
 * Marina Danilevsky
 * Yunyao Li
 * Huaiyu Zhu
-
 
 ### Contributors
 
