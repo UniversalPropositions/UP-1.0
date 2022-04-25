@@ -8,7 +8,7 @@ These is release 1.0 of the Universal Proposition Banks. It is built upon [relea
 
 **News (01/31/2017)**: Initial versions of Finnish, Portuguese and Spanish UP released!
 
-**News (04/15/2022)**: We are freezig the resources in this repository. 
+**News (04/15/2022)**: We are freezing the resources in this repository. 
 
 To be in consistent with UP2.0 repository format, we reorganize this
 repo and copy the data from each langauge specific folder to langauge
